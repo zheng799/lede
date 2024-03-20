@@ -91,6 +91,19 @@ define Device/qihoo_360v6
 endef
 TARGET_DEVICES += qihoo_360v6
 
+define Device/zn_m2
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := ZN
+	DEVICE_MODEL := M2
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@cp03-c1
+	SOC := ipq6018
+	DEVICE_PACKAGES := ipq-wifi-zn_m2
+endef
+TARGET_DEVICES += zn_m2
+
 define Device/redmi_ax5-jdcloud
 	$(call Device/FitImage)
 	$(call Device/EmmcImage)
